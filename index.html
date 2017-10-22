@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- <script src="vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div class="table-place">
+		<input type="text" class="input-text" v-model="input" placeholder="Введите данные для поиска">
+			<table v-for="item in array | filterBy input 'name'">
+				<tr>
+					<th>ФИО студента</th>
+					<th>Факультет</th>
+					<th>Курс</th>
+					<th>Форма обучения</th>
+					<th>Кол-во часов</th>
+				</tr>
+				<tr>
+					<td>{{item.name}}</td>
+					<td>{{item.faculty}}</td>
+					<td>{{item.course}}</td>
+					<td>{{item.form}}</td>
+					<td>{{item.count}}</td>
+				</tr>
+			</table>
+	</div>
+</div>
+<script>
+new Vue({
+	el: "#wrapper",
+	data: {
+		input: '',
+		array: [
+			{
+				name: 'Иванов И.И.',
+				faculty: 'ИПФ',
+				course: 3,
+				form: 'Очно',
+				count: '155/133'
+			},
+			{
+				name: 'Петров П.П.',
+				faculty: 'АПФ',
+				course: 2,
+				form: 'Очно',
+				count: '133/111'
+			},
+			{
+				name: 'Сидоров С.С.',
+				faculty: 'ИПФ',
+				course: 4,
+				form: 'Очно',
+				count: '122/100'
+			},
+			{
+				name: 'Петренко И.С.',
+				faculty: 'АПФ',
+				course: 4,
+				form: 'Очно',
+				count: '133/95'
+			},
+			{
+				name: 'Куц С.С.',
+				faculty: 'ФизМат',
+				course: 1,
+				form: 'Очно',
+				count: '155/140' 
+			},
+			{
+				name: 'Жулова Л.К.',
+				faculty: 'ХИМФ',
+				course: 4,
+				form: 'Очно',
+				count: '158/143' 
+			},
+			{
+				name: 'Лаврова Л.Ю.',
+				faculty: 'ХИМФ',
+				course: 4,
+				form: 'Очно',
+				count: '158/140' 
+			},
+			{
+				name: 'Созонова В.С.',
+				faculty: 'ХИМФ',
+				course: 4,
+				form: 'Очно',
+				count: '158/122' 
+			},
+			{
+				name: 'Краснова А.С.',
+				faculty: 'ФизМат',
+				course: 1,
+				form: 'Очно',
+				count: '155/120' 
+			},
+			{
+				name: 'Милейко О.Ю.',
+				faculty: 'ИПФ',
+				course: 1,
+				form: 'Очно',
+				count: '125/100' 
+			},
+			{
+				name: 'Красножон Т.Т.',
+				faculty: 'АПФ',
+				course: 3,
+				form: 'Очно',
+				count: '135/130' 
+			},
+			{
+				name: 'Пророк А.Я.',
+				faculty: 'ФизМат',
+				course: 5,
+				form: 'Очно',
+				count: '115/115' 
+			},
+			{
+				name: 'Белоус Т.В.',
+				faculty: 'ФизМат',
+				course: 3,
+				form: 'Очно',
+				count: '125/100' 
+			},
+			{
+				name: 'Головач К.К.',
+				faculty: 'ФизМат',
+				course: 1,
+				form: 'Очно',
+				count: '155/100' 
+			},
+			{
+				name: 'Куценко В.С.',
+				faculty: 'ФизМат',
+				course: 2,
+				form: 'Очно',
+				count: '145/110' 
+			},
+		]
+	},
+	
+})
+</script>
+</body>
+</html>
